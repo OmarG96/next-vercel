@@ -1,0 +1,27 @@
+import { ReactElement } from "react";
+import Link from "next/link";
+import { DarkLayout } from "../components/layouts/dark-layout";
+import { MainLayout } from "../components/layouts/main-layout";
+
+export default function AboutPage() {
+  return (
+    <>
+      <h1>About</h1>
+      <h1 className="title">
+        Ir a <Link href="/">Home</Link>
+      </h1>
+
+      <p className="description">
+        Get started by editing <code className="code">pages/index.js</code>
+      </p>
+    </>
+  );
+}
+
+AboutPage.getLayout = function getLayout(page: ReactElement) {
+  return (
+    <MainLayout>
+      <DarkLayout>{page} </DarkLayout>
+    </MainLayout>
+  );
+};
